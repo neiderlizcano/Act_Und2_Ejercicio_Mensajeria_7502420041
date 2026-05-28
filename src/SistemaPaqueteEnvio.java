@@ -79,7 +79,7 @@ public class SistemaPaqueteEnvio {
         String numeroGuia = leerTextoObligatorio("Numero de guia: ");
 
         PaqueteEnvio paqueteBuscado = new PaqueteEnvio(
-                numeroGuia, "", "", "", "", ""
+                numeroGuia, "", "", "", "", "", "", ""
         );
 
         if (listaGeneral.contiene(paqueteBuscado)) {
@@ -87,16 +87,20 @@ public class SistemaPaqueteEnvio {
             return;
         }
 
-        String remitente = leerTextoObligatorio("Remitente: ");
-        String destinatario = leerTextoObligatorio("Destinatario: ");
-        String direccionDestino = leerTextoObligatorio("Direccion de destino: ");
+        String nombre = leerTextoObligatorio("Nombre: ");
+        String apellido = leerTextoObligatorio("Apellido: ");
+        String numeroCedula = leerTextoObligatorio("Numero de cedula: ");
+        String ciudad = leerTextoObligatorio("Ciudad: ");
+        String direccion = leerTextoObligatorio("Direccion: ");
         String descripcion = leerTextoObligatorio("Descripcion del paquete: ");
 
         PaqueteEnvio paquete = new PaqueteEnvio(
                 numeroGuia,
-                remitente,
-                destinatario,
-                direccionDestino,
+                nombre,
+                apellido,
+                numeroCedula,
+                ciudad,
+                direccion,
                 descripcion,
                 "PENDIENTE"
         );
@@ -145,7 +149,7 @@ public class SistemaPaqueteEnvio {
         String numeroGuia = leerTextoObligatorio("Digite el numero de guia: ");
 
         PaqueteEnvio paqueteBuscado = new PaqueteEnvio(
-                numeroGuia, "", "", "", "", ""
+                numeroGuia, "", "", "", "", "", "", ""
         );
 
         Object resultado = listaGeneral.buscarDato(paqueteBuscado);
@@ -230,7 +234,7 @@ public class SistemaPaqueteEnvio {
 
         } while (texto.isEmpty());
 
-        return texto;
+        return texto.toUpperCase();
     }
 
     private static int leerEntero(String mensaje) {

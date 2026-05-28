@@ -3,18 +3,23 @@ import java.util.Objects;
 public class PaqueteEnvio {
 
     private String numeroGuia;
-    private String remitente;
-    private String destinatario;
-    private String direccionDestino;
+    private String nombre;
+    private String apellido;
+    private String numeroCedula;
+    private String ciudad;
+    private String direccion;
     private String descripcion;
     private String estado;
 
-    public PaqueteEnvio(String numeroGuia, String remitente, String destinatario,
-                        String direccionDestino, String descripcion, String estado) {
+    public PaqueteEnvio(String numeroGuia, String nombre, String apellido,
+                        String numeroCedula, String ciudad, String direccion,
+                        String descripcion, String estado) {
         this.numeroGuia = numeroGuia;
-        this.remitente = remitente;
-        this.destinatario = destinatario;
-        this.direccionDestino = direccionDestino;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numeroCedula = numeroCedula;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
         this.descripcion = descripcion;
         this.estado = estado;
     }
@@ -27,28 +32,44 @@ public class PaqueteEnvio {
         this.numeroGuia = numeroGuia;
     }
 
-    public String getRemitente() {
-        return remitente;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRemitente(String remitente) {
-        this.remitente = remitente;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDestinatario() {
-        return destinatario;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setDestinatario(String destinatario) {
-        this.destinatario = destinatario;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getDireccionDestino() {
-        return direccionDestino;
+    public String getNumeroCedula() {
+        return numeroCedula;
     }
 
-    public void setDireccionDestino(String direccionDestino) {
-        this.direccionDestino = direccionDestino;
+    public void setNumeroCedula(String numeroCedula) {
+        this.numeroCedula = numeroCedula;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getDescripcion() {
@@ -71,9 +92,11 @@ public class PaqueteEnvio {
     public String toString() {
         return "PaqueteEnvio{" +
                 "numeroGuia='" + numeroGuia + '\'' +
-                ", remitente='" + remitente + '\'' +
-                ", destinatario='" + destinatario + '\'' +
-                ", direccionDestino='" + direccionDestino + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", numeroCedula='" + numeroCedula + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", direccion='" + direccion + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", estado='" + estado + '\'' +
                 '}';
@@ -100,6 +123,6 @@ public class PaqueteEnvio {
 
     @Override
     public int hashCode() {
-        return Objects.hash(numeroGuia == null ? "" : numeroGuia.toLowerCase());
+        return Objects.hash(numeroGuia == null ? "" : numeroGuia.toUpperCase());
     }
 }
